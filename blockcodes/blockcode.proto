@@ -1,0 +1,23 @@
+
+syntax = "proto3";
+
+package blockcodes;
+
+option go_package = "github.com/pdiwadkar/listing";
+
+service BlockCodeTransaction {
+
+    rpc GetTransaction(Txn) returns (stream IdTxn) {}
+}
+
+message Txn {
+    string bin = 1;
+    string logo = 2;
+    string code = 3;
+}
+message IdTxn{
+    string bin = 1;
+    string logo = 2;
+    string code = 3;
+    string txn = 4;
+}
